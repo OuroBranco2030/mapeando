@@ -1,0 +1,36 @@
+<div class="row show-demand" ng-init="$root.showNavBackLink = true">
+  <div class="medium-10 columns view-map medium-centered" style="padding: 0">
+    <div id="mini-map" style="height: 150px; width: 100%">
+    
+    </div>
+  </div>
+  <div class="medium-10 view-content columns medium-centered">
+    <br/>
+
+    <div class="row">
+      <div class="medium-2 columns small-3"><img ng-src="{{ demand.user.avatar }}" alt="avatar"/></div>
+      <div class="medium-10 columns small-9 end">
+        <h4> {{ demand.user.first_name }} quer </h4> 
+        <p> <img ng-src="{{ demand.category.icon_url }}" width="20" height="20"> {{ demand.category.name }} </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-8 medium-centered columns">
+        <blockquote> {{ demand.fullname }} </blockquote> 
+      </div>
+
+    </div>
+
+
+    <br/>
+  </div>
+
+  <div class="medium-10 columns medium-centered view-content" style="padding-top: .6em">
+
+    <div class="fb-comments" data-width="100%" data-numposts="5" data-href="{{ pageUrl }}" data-colorscheme="light"></div>
+
+  </div>
+  <div class>&nbsp; <br/><br/></div>
+</div>
+
+

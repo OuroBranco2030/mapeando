@@ -1,0 +1,668 @@
+body, html
+  -webkit-font-smoothing: antialiased
+  font-family: 'Helvetica', 'Arial', sans-serif
+
+body
+  position: relative
+  height: auto
+  min-height: 100% !important
+  background: #eee !important
+
+.hidden
+  display: none !important
+  
+.padding-1
+  padding: 1em
+
+.row-full
+  width: 100% !important
+
+[ng\:cloak], [ng-cloak], .ng-cloak 
+  display: none
+
+.leaflet-control-attribution
+  display: none !important
+
+.leaflet-popup
+  z-index: 9999
+
+// General class for buttons
+// TODO: remove the !important ASAP
+// Due to Foundation highly forcing the styles, I'm using the !important flag
+.button
+  background: #ED2654 !important 
+  color: white !important
+  margin-top: 1em !important
+  border-radius: 4px !important
+  &:hover
+    background: #FF0032 !important
+  &:active
+    position: relative
+    top: 2px
+  &:disabled
+    background: #ddd !important 
+    color: #333 !important
+    -webkit-filter: grayscale(1) !important
+    opacity: .3 !important
+    cursor: not-allowed !important
+    box-shadow: none
+    &:hover
+      background:  #ddd 
+      color: inherit
+
+
+
+// Hiding elements
+.show-demand-page
+  display: none !important
+
+
+
+// Welcome Screen
+#welcome-screen
+  background: rgba(0,0,0,0.9)
+  width: 100%
+  position: fixed
+  z-index: 990 
+  top: 0
+  bottom: 0
+  h3
+    font-weight: 600
+    color: #ed2654
+  h5
+    color: white
+
+.welcome-text
+  margin-top: 2em
+
+
+#logos
+  position: fixed
+  bottom: 2%
+  right: 2%
+  opacity: .7
+  z-index: 14
+  &:hover
+    opacity: 1
+
+
+// Header 
+#header .row:first-child
+  width: 100%
+  max-width: 100%
+
+#header
+  z-index: 10
+  box-shadow: 0 1px 1px #ddd
+  background: white
+  position: relative
+  padding: .6em 0
+
+.logo img 
+  position: relative
+  
+
+// header's Navigation menu
+ol.navigation
+  position: relative
+  padding: 0
+  margin: 0
+  top: 4px
+  font-size: .9em
+
+.user-logged .hidden
+  display: inline-block !important
+
+
+.user-logged .user-avatar
+  a
+    &:hover
+      text-decoration: none !important
+  img
+    position: relative
+    display: inline-block
+  span
+    font-size: .7em
+
+  .user-menu 
+    transition: all .3s
+    display: none
+
+.user-avatar:hover .user-menu
+  box-shadow: 0 1px 1px #666
+  transition: all .3s
+  display: block
+  margin-left: 0
+  position: absolute
+  top: 38px
+  background: white
+  width: 35%
+  min-width: 200px
+  right: 0
+  height: auto
+  z-index: 9999 !important
+  a
+    color: #666
+    font-size: .9em
+    padding: .8em 2em
+    display: block
+
+  li
+    display: block
+    width: 100%
+    list-style-type: none
+    text-align: right 
+    margin-left: 0
+    border-bottom: 1px solid #eee
+    &:hover
+      background: #f9f9f9
+
+
+.menu
+  padding-right: 0 !important
+  margin-right: 0 !important
+
+.menu .navigation-link
+  margin: 0
+  display: inline-block
+  padding: 0 1em .4em 0 
+  transition: all .2s
+
+
+
+
+  a
+    position: relative
+    top: 28%
+    color: #333
+    transition: all .2s linear
+    &:hover
+      text-decoration: underline
+    
+    &.current-user
+      img
+        margin: 0
+        padding: 0
+
+
+  &.button-action a
+    background: #ED2654
+    color: white
+    padding: .8em .8em
+    border-radius: 4px
+    &:hover
+      text-decoration: none
+      background: #FF0032
+
+
+
+.index
+  height: 100% 
+  min-height: 100%
+
+.index .row:first-child
+  width: 100% !important
+  min-width: 100% !important
+  min-height: 100% !important
+  height: 100% !important
+
+.index .columns
+  height: 100% !important
+  padding: 0
+#map
+  width: 100% !important
+  height: 100% !important 
+
+
+// Marker on index page map
+.marker-cluster-tiny, .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large
+  background-color: transparent !important //rgba(255, 0, 70, 0.5) !important
+  border: 2px solid rgba(255, 0, 70, 0.6)
+  border-radius: 200px !important
+
+.marker-cluster-tiny div, .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div
+  background-color: rgba(255, 0, 70, 0.8)
+  width: auto !important
+  height: auto !important
+  line-height: auto !important
+  color: white !important
+  border-radius: 200px !important
+  margin-top: 3px !important
+  margin-right: 5px !important
+  margin-left: 3px !important
+  text-align: center
+  font-weight: bold
+
+
+
+//.marker-cluster-small div
+.marker-cluster-small div
+  font-size: .9em !important
+  line-height: 30px !important
+  height: 30px !important
+  width: 30px !important
+
+
+//.marker-cluster-small div
+.marker-cluster-medium div
+  font-size: 1em !important
+  line-height: 40px !important
+  height: 40px !important
+  width: 40px !important
+
+
+.marker-cluster-large div
+  font-size: 1.2em !important
+  line-height: 50px !important
+  height: 50px !important
+  width: 50px !important
+
+
+
+
+
+
+// Filters block
+#filters
+  background: white
+  height: 100%
+  padding: .2em .6em .6em 1em
+  h3
+    font-size: 1.1em !important
+    font-weight: bold
+    padding: .4em 0 .4em 0
+    margin-bottom: .8em
+    border-bottom: 1px solid #e9e9e9
+  ol
+    margin-left: 0
+    margin: 0
+  li
+    list-style-type: none
+    padding: .1em 1.5em
+    display: block
+    clear: both
+    font-size: .8em
+    transition: all .3s
+    -webkit-filter: grayscale(1)
+    -moz-filter: grayscale(1)
+    -ms-filter: grayscale(1)
+    filter: grayscale(1)
+    opacity: .8
+    img 
+      float: left
+      opacity: .4
+      padding: .2em .4em .4em 0
+    &:hover
+      background: #f9f9f9
+      cursor: pointer
+    &.active
+      opacity: 1
+      -webkit-filter: grayscale(0)
+      -moz-filter: grayscale(0)
+      -ms-filter: grayscale(0)
+      filter: grayscale(0)
+      img
+        opacity: 1
+  h5
+    font-weight: bold
+    font-size: .8em !important
+    padding: .2em 1em .3em 1em
+    margin: 0
+  .filter
+    margin: 0 0 .6em 0
+
+.show-all a
+  font-size: .8em
+  color: #666
+  border-bottom: 1px solid #999
+
+
+
+
+.view-content
+  background: white
+  margin-top: 2em
+  box-shadow: 0 1px 1px #333
+
+.view-container, .view-animate
+  position: relative
+
+.view-container
+  background: #eee !important
+  position: relative
+  z-index: 8
+  height: 91%
+  
+.view-animate
+  background: #eee 
+  height: 100% 
+  min-height: 100% !important
+
+.view-animate.ng-enter, .view-animate.ng-leave 
+  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s
+  -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s
+  -ms-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s
+  display: block
+  width: 100%
+  position: absolute
+  -webkit-transform: scale(0)
+
+.view-animate.ng-enter
+  transition: all .2s
+  -webkit-transform: scale(0)
+  -ms-transform: scale(0)
+  -moz-transform: scale(0)
+  transform: scale(0)
+
+.view-animate.ng-enter.ng-enter-active
+  -webkit-transform: scale(1)
+  -ms-transform: scale(1)
+  -moz-transform: scale(1)
+  transform: scale(1)
+
+.view-animate.ng-leave.ng-leave-active
+  left: -100%
+
+
+
+// Demands.new
+
+
+
+.categories ol
+  margin: 0
+  padding: 0
+
+.categories ol li
+  list-style-type: none
+  display: inline-block
+  margin: .4em .4em .4em 0
+  background: #dfdfdf 
+  label
+    padding: .7em .8em
+  &:hover
+    background: #ffd503 
+    label
+      color: #333
+
+.categories li input 
+  display: inline-block
+  margin: .1em .4em
+
+
+.new-demand
+  padding: .8em 0
+
+.new-demand-form
+  padding: 1em
+  h4 
+    font-weight: 500
+    padding: 0
+    margin: 1em 0 0 0
+    line-height: 1em
+  .info
+    color: #999
+    font-size: .9em 
+    display: inline-block
+    margin-bottom: 1.4em
+  .error
+    font-size: small
+
+.demand-info
+  h3
+    font-weight: 500
+    margin-top: .4em
+  p
+    color: #444
+    width: 80%
+    margin: 0 auto
+
+// Edit Pins / Add new Marker
+.edit-pin-form
+  width: 100%
+  position: absolute
+  z-index: 9 
+  margin: 0 auto
+  padding: 0
+  background: #f9f9f9 
+
+
+.edit-pin-form label
+  width: 70%
+  color: #444
+  display: inline-block
+  padding: .6em .8em
+  margin: .6em 0
+
+.edit-pin-form .info
+  color: #333 
+  font-size: .9em
+  margin-top: -.6em
+  opacity: .7
+
+#searchTextField 
+  display: block
+  width: 100% 
+  box-shadow: none
+  border-bottom: 1px solid #aaa
+  font-size: 1.2em
+  color: #333
+  padding: 1.2em .4em !important
+  height: 40px
+  margin: 0
+#searchTextField:focus
+  background: white
+
+.edit-pin-action
+  background: #333
+  display: inline-block
+  webkit-filter: invert(100%)
+  padding: .4em .6em
+  margin: .6em 0
+  a
+    color: white
+    &:hover
+      color: white
+  &:hover
+    background: #ed2654
+
+
+
+.leaflet-control-zoom
+  position: relative
+  top: 10em
+
+.map-data 
+  height: 100% 
+  &:hover
+    cursor: crosshair
+
+.map-data #user-map
+  height: 100%
+  
+
+.form-options
+  position: fixed
+  z-index: 9999
+  height: 80px
+  width: 100%
+  background: white
+  bottom: 0 !important
+
+
+
+.form-options .save
+  margin-top: .4em
+
+.form-options .reset
+  display: inline-block
+  position: relative
+  top: 1.2em
+  border-bottom: 1px solid #666
+  color: #666
+
+
+
+.marker-view
+  h6
+    padding-left: .4em
+    font-size: 1.1em
+  h5
+    margin-top: .1em
+  img
+    float: left
+    padding: 0 .4em .8em 0
+  p
+    font-size: 1em
+  .marker-content
+    margin-top: .8em
+    background: #f9f9f9
+    padding: .8em 2em
+    blockquote
+      border: none
+      padding-left: 0
+      font-size: 1.1em
+
+  a.button
+    width: 100%
+
+.show-demand 
+  h4
+    font-weight: 500
+  .view-map
+    margin-top: .4em
+    box-shadow: 0 1px 1px #333
+  .leaflet-control-attribution 
+    visibility: hidden
+  .leaflet-control-zoom
+    top: 0
+
+.fb-comments, .fb-comments iframe[style], .fb_iframe_widget > span[style]
+  width: 100% !important
+
+.fbFooterBorder, .fbConnectWidgetFooter
+  display: none !important
+
+
+
+
+.login-box, .signup-box
+  margin-top: 1em
+
+  .logo-icon
+    padding-top: 1em
+ 
+  input
+    font-size: 'Verdana' !important
+    font-size: 1.2em !important
+    color: #000 !important
+
+  .view-content
+    padding: 1em 2em
+
+.logo-icon
+  h4 
+    font-weight: 400
+
+
+.signup-block
+  .view-content
+    padding: 0
+    background: none
+    box-shadow: none
+
+  .button 
+    background: none !important
+    box-shadow: none !important
+    color: #496CBB !important
+    margin: 0 !important
+    padding: 0
+    border-radius: 0 !important
+    width: auto
+    &:hover
+      border-bottom: 1px solid #496CBB
+
+
+
+.avatar-list
+  background: #f9f9f9
+  padding: .8em
+  img
+    width: 20%
+    transition: all .2s
+    margin: 0 .2em
+    border: 2px solid white
+    border-radius: 200px
+    -webkit-filter: grayscale(1)
+    &:hover
+      -webkit-filter: grayscale(0)
+
+.avatar-block
+  margin-top: 1em
+  img
+    width: 70% 
+    display: block
+    margin: 0 auto
+
+  a
+    font-size: .95em
+    display: block
+    padding: .6em 0
+    text-decoration: underline
+    &:hover
+      text-decoration: none 
+
+
+
+
+
+@media screen and (max-width: 780px)
+  .hide-on-mobile
+    display: none !important
+
+  .navigation-link
+    padding: .3em .4em !important
+    font-size: .9em
+
+  .user-avatar
+    padding: 0 .4em !important
+  ol.navigation
+    top: 0px
+  
+  #welcome-screen
+    h3
+      font-size: 1.2em
+    h5
+      font-size: .9em
+  .index #map
+    width: 100% !important
+
+
+
+
+
+// Pages style
+.about
+  padding: 2em 3em !important
+  h2
+    font-weight: bold 
+    font-size: 1.8em
+    margin-bottom: 1em
+  h4
+    margin-top: .8em
+    font-weight: 500
+
+  h4 span
+    background: #ed2654
+    display: inline-block
+    padding: .2em .6em 
+    position: relative
+    top: -2px
+    margin-right: .4em
+    font-size: .8em !important
+    border-radius: 6px
+    color: white
+  p
+    margin-bottom: 3em
+    color: #444

@@ -1,0 +1,37 @@
+demandsApp = angular.module('demandsApp', [
+  'angular-loading-bar',
+  'angular.filter',
+  'ezfb',
+  'controllers', 
+  'ngAnimate', 
+  'ngRoute', 
+  'ngResource',
+  'Devise',
+  'angulartics',
+  'angulartics.google.analytics',
+]);
+
+demandsApp.config(['$routeProvider', '$locationProvider', 'ezfbProvider', function($routeProvider, $locationProvider, ezfbProvider){
+  $routeProvider
+  .when('/',                  { templateUrl: '<%= asset_path "demands/index.html" %>', controller: 'demandsController' })
+  .when('/demands/new',       { templateUrl: '<%= asset_path "demands/new.html" %>', controller: 'newDemandController' })
+  .when('/demands/new/pins',  { templateUrl: '<%= asset_path "pins/new.html" %>', controller: 'newPinController' })
+  .when('/demands/create',    { templateUrl: '<%= asset_path "demands/create.html" %>', controller: 'createDemandController' })
+  .when('/demands/new/pins/edit', { templateUrl: '<%= asset_path "pins/edit.html" %>', controller: 'editPinController' })
+  .when('/demands/show/:id',      { templateUrl: '<%= asset_path "demands/show.html" %>', controller: 'showDemandController' })
+  .when('/about',                 { templateUrl: '<%= asset_path "pages/about.html" %>' })
+  .when('/login',                 { templateUrl: '<%= asset_path "users/login.html" %>', controller: 'userLoginController' })
+  .when('/user/confirmation',     { templateUrl: '<%= asset_path "users/confirmation.html" %>' })
+  .when('/user/confirmation/:token',  { templateUrl: '<%= asset_path "users/confirmation.html" %>', controller: 'userConfirmationController' })
+  .when('/signup',                    { templateUrl: '<%= asset_path "users/signup.html" %>', controller: 'userSignupController' })
+  .when('/logout',                    { templateUrl: '<%= asset_path "users/logout.html" %>', controller: 'userSessionLogoutController' })
+  .when('/user/:id/profile', { templateUrl: '<%= asset_path "users/profile.html" %>', controller: 'userProfileController' });
+
+  ezfbProvider.setLocale('pt_BR');
+
+  //$locationProvider.html5Mode(true); 
+}]);
+
+
+
+controllers = angular.module('controllers', []);

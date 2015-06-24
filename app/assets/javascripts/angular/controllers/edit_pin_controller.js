@@ -24,8 +24,8 @@ controllers.controller('editPinController', ['$scope', 'demandFormFactory', 'map
 
   $scope.setupAutoComplete = function() {
     var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(-23.0763561, -43.7959671),
-      new google.maps.LatLng(-22.7259989, -43.0799675)
+      new google.maps.LatLng((-20.6227433, -43.7999582),
+      new google.maps.LatLng(-20.4311149, -43.5756612)
     );
 
     var options = { bounds: defaultBounds, componentRestrictions: { country: 'BR' } };

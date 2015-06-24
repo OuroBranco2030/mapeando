@@ -8,7 +8,7 @@ demandsApp.factory('mapFactory', ['$resource', function($resource){
 
       // set map view to the city boundaries
       // SoutWest, NorthEast
-      var bounds = L.latLngBounds(L.latLng(-20.6227433, -43.7999582), L.latLng(-20.4311149, 43.5756612));
+      var bounds = L.latLngBounds(L.latLng(-20.6227433, -43.7999582), L.latLng(-20.4311149, -43.5756612));
 
       var map = L.map(map_id, { 
         fullScreen: true, 

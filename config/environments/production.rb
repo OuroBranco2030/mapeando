@@ -81,7 +81,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  config.action_mailer.default_url_options = { :host => 'mapeando.rio.gov.br' }
+  config.action_mailer.default_url_options = { :host => 'mapeando.ourobranco2030.com.br' }
   config.action_mailer.delivery_method = :smtp
  
 

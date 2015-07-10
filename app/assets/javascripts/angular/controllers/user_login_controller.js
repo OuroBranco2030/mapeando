@@ -1,4 +1,6 @@
-controllers.controller("userLoginController", ['$scope', '$location', '$rootScope', 'Auth', 'currentUserFactory' , function($scope, $location, $rootScope, Auth, currentUserFactory){
+controllers.controller("userLoginController", [
+  '$scope', '$location', '$rootScope', 'Auth', 'currentUserFactory' , 
+  function($scope, $location, $rootScope, Auth, currentUserFactory){
 
 
   $scope.user;

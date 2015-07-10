@@ -1,4 +1,6 @@
-controllers.controller('editPinController', ['$scope', 'demandFormFactory', 'mapFactory' ,'$location', function($scope, demandFormFactory, mapFactory, $location){
+controllers.controller('editPinController', [
+  '$scope', 'demandFormFactory', 'mapFactory' ,'$location', 'GmapsAutocompleteFactory', 
+  function($scope, demandFormFactory, mapFactory, $location, GmapsAutocompleteFactory){
 
   $scope.userMarker, $scope.routingControl, $scope.initialMarker;
   $scope.map      = mapFactory.buildMap('user-map');
@@ -23,16 +25,7 @@ controllers.controller('editPinController', ['$scope', 'demandFormFactory', 'map
  
 
   $scope.setupAutoComplete = function() {
-    var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(-20.6227433, -43.7999582),
-      new google.maps.LatLng(-20.4311149, -43.5756612)
-    );
-
-    var options = { bounds: defaultBounds, componentRestrictions: { country: 'BR' } };
-    var input = document.getElementById('searchTextField');
-
-    var autocomplete = new google.maps.places.Autocomplete(input, options);
-    
+    var autocomplete = GmapsAutocompleteFactory.setup('searchTextField');
 
     google.maps.event.addListener(autocomplete, 'place_changed', function(){
 

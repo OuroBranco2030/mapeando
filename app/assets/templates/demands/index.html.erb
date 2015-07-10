@@ -1,39 +1,56 @@
 <div class="index" ng-init="$root.showNavBackLink = false">
 
 
-  <div class="row">
+
+  <div class="row map-row">
 
     <div class="medium-8 large-9 columns">
       <div id="map"></div>
+
     </div>
 
+    <div class="show-for-medium-up large-3 medium-4 columns end filter-search">
 
-    <div id="filters" class="show-for-medium-up large-3 medium-4 columns end">
-      <h3 class="text-center"> Ver demandas indicadas </h3>
-      <div class="filter" ng-repeat="(key, value) in categories.categories | groupBy: 'travel_mode' | orderBy: '!travel_mode'">
-        <h5>{{ categoryName[key] }}</h5>
-        <ol>
-          <li ng-click="loadMarkers(category.id)" ng-class="{ 'active': activeCategory == category.id }" ng-repeat="category in value">
-            <img ng-src="{{ category.icon_url }}" width="20" />
-            {{ category.name }} 
-            <sup ng-show="category.issue" ng-hide="!category.issue"><a href="http://pmus.com.br">&nbsp;PMUS</a> </sup>
-          </li>
-        </ol>
+      <div class="row" id="search">
+        <div class="medium-12 columns">
+          <form>
+            <input type="text" id="searchField" name="search" value="" placeholder="Pesquise por rua, bairro ou endereço"/>
+            <button id="searchBtn"><%= image_tag('navicon-search.png', size: '24x24') %></button>
+          </form>
+
+        </div>
       </div>
-      <div class="show-all text-center" ng-clock><a ng-click="loadMarkers('')">Ver todas</a></div>
+
+      <div id="filters">
+
+
+        <div class="filter" ng-repeat="(key, value) in categories.categories | groupBy: 'travel_mode' | orderBy: '!travel_mode'">
+          <h5>{{ categoryName[key] }}</h5>
+          <ol>
+            <li ng-click="loadMarkers(category.id)" ng-class="{ 'active': activeCategory == category.id }" ng-repeat="category in value">
+              <img ng-src="{{ category.icon_url }}" width="18" />
+              {{ category.name }} 
+              <sup ng-show="category.issue" ng-hide="!category.issue"><a href="http://pmus.com.br">&nbsp;PMUS</a> </sup>
+            </li>
+          </ol>
+        </div>
+        <div class="show-all text-center filter-actions" ng-clock>
+          <a ng-click="loadMarkers('')">Ver todas as demandas</a>
+        </div>
+
+
+      </div>
     </div>
     <!-- end filters -->
+    <div id="logos">
+      <a href="http://fb.com/ourobranco2030" target="_blank"><%= image_tag('https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xta1/v/t1.0-9/11391143_863248520378549_869792679696400890_n.jpg?oh=d22b47a757c57cc6ffc57624c1690303&oe=5624B37C&__gda__=1444674626_8f029c2b340b46122a4b19e5ae57c2c5', size: '50x50')  %></a> &nbsp;
+    </div>
+
+
 
 
   </div>
   <!-- end row -->
 
 </div>
-
-
-<div id="logos">
-  <a href="http://fb.com/ourobranco2030" target="_blank"><%= image_tag('https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xta1/v/t1.0-9/11391143_863248520378549_869792679696400890_n.jpg?oh=d22b47a757c57cc6ffc57624c1690303&oe=5624B37C&__gda__=1444674626_8f029c2b340b46122a4b19e5ae57c2c5', size: '50x50')  %></a> &nbsp;
-  <!--<a href="http://prefeitura.rio" target="_blank"><%= image_tag('prefeitura.png', size: '60x60')  %></a>-->
-</div>
-
 

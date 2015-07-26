@@ -1,7 +1,8 @@
 # Mapeando
 
-Mapa colaborativo de demandas. Você pode ver a plataforma online no endereço http://mapeando.rio.gov.br.
+Mapa colaborativo de demandas. Você pode ver a plataforma online no endereço http://mapeando.ourobranco2030.com.br.
 
+O Mapeando foi desenvolvido pelo [LAB.Rio, Laboratório de Participação do Rio de Janeiro](http://labrio.cc) e está disponível originalmente no http://github.com/LAB-Rio/mapeando.
 
 
 
